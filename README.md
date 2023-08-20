@@ -1,4 +1,4 @@
-# Direct Printing from browser in android.
+# Direct Printing from browser in android with ESC POS
 
 This repository contains a simple HTML code for generating and printing bills using web technology. The code is designed to be easily accessible via web browsers and also supports various methods of printing, including Bluetooth, USB, and network/wireless connections.
 
