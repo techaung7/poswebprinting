@@ -24,9 +24,10 @@ This HTML code provides a user-friendly interface for generating bills and print
 ## Usage
 
 1. Clone or download this repository to your local machine.
-2. Open the `bill.html` file in a web browser.
+2. Open the `webprint.html` file in a web browser.
 3. Customize the bill details, items, and amounts as needed.
 4. Use the provided buttons to initiate printing based on your preferred method.
+5. Download and install the android application and run in background.
 
 Please note that for certain printing methods (Bluetooth, USB, network), the code relies on specific URLs and data formats for successful printing. Ensure that the URLs provided in the script are correct and accessible.
 
