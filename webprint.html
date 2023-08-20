@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<!-- saved from url=(0042)https://loopedlabs.com/web-print/bill.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Print</title>
+</head>
+<body>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        table {
+            border-collapse: collapse;
+            border: 1px solid black;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        table td,
+        th {
+            border: 1px solid black;
+            padding: 3px;
+        }
+
+        .ra {
+            text-align: right;
+        }
+
+        .la {
+            text-align: left;
+        }
+
+        @media print {
+
+            .no-print,
+            .no-print * {
+                display: none !important;
+            }
+        }
+    </style>
+    <table style="border: none">
+        <thead>
+            <tr>
+                <th style="border: none"><img src="./Web Print_files/llp.jpg"></th>
+                <th style="border: none">
+                    <h3>Test Bill<br>Bill Header</h3>
+                </th>
+            </tr>
+        </thead>
+    </table>
+    <table>
+        <thead>
+            <tr>
+                <th>Sl. No.</th>
+                <th class="la">Item Desc</th>
+                <th class="ra">Amt</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="la">1</td>
+                <td class="la">Item 1</td>
+                <td class="ra">₹45.00</td>
+            </tr>
+            <tr>
+                <td class="la">2</td>
+                <td class="la">Item qw1</td>
+                <td class="ra">₹451.00</td>
+            </tr>
+            <tr>
+                <td class="la">3</td>
+                <td class="la">Item 1</td>
+                <td class="ra">₹1,545.00</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="2" class="ra">Total</td>
+                <td>₹2,041.00</td>
+            </tr>
+        </tfoot>
+    </table>
+    <div class="no-print" style="padding: 20px;">
+        <br>
+    <table><tbody><tr><td colspan="2" style="padding: 20px;">
+        <button class="no-print" onclick="window.print();">Print via Browser</button>
+        </td></tr><tr><td style="padding: 20px;">
+            <h3>Print Inline HTML</h3>
+    <button class="no-print" onclick="btPrintBillInline();">App Link Print Inline - Bluetooth</button>
+    <br><br><br>
+    <button class="no-print" onclick="usbPrintBillInline();">App Link Print Inline - USB</button>
+    <br><br><br>
+    <button class="no-print" onclick="netPrintBillInline();">App Link Print Inline - Net / WiFi</button>
+    <br></td><td style="padding: 20px;">
+        <h3>Print HTML URL</h3>
+    <button class="no-print" onclick="btPrintBillUrl();">App Link Print URL - Bluetooth</button>
+    <br><br><br>
+    <button class="no-print" onclick="usbPrintBillUrl();">App Link Print URL - USB</button>
+    <br><br><br>
+    <button class="no-print" onclick="netPrintBillUrl();">App Link Print URL - Net / WiFi</button>
+    </td></tr>
+<tr><td style="padding: 20px;">
+    <h3>Print Image URL</h3>
+    <button class="no-print" onclick="btPrintImgUrl();">App Link Print Image URL - Bluetooth</button>
+    <br><br><br>
+    <button class="no-print" onclick="usbPrintImgUrl();">App Link Print Image URL - USB</button>
+    <br><br><br>
+    <button class="no-print" onclick="netPrintImgUrl();">App Link Print Image URL - Net / WiFi</button>
+</td>
+<td style="padding: 20px;">
+    <h3>Print PDF URL</h3>
+    <button class="no-print" onclick="btPrintPdfUrl();">App Link Print PDF URL - Bluetooth</button>
+    <br><br><br>
+    <button class="no-print" onclick="usbPrintPdfUrl();">App Link Print PDF URL - USB</button>
+    <br><br><br>
+    <button class="no-print" onclick="netPrintPdfUrl();">App Link Print PDF URL - Net / WiFi</button>
+</td></tr></tbody></table>
+    </div>
+    <script language="JavaScript">
+        function netPrintBillInline() {
+            let dynHtml = "print://escpos.org/escpos/net/print?srcTp=uri&srcObj=html&src='data:text/html,";
+            dynHtml += document.body.innerHTML
+            dynHtml += "'";
+            window.location.href = dynHtml;
+        }
+        function btPrintBillInline() {
+            let dynHtml = "print://escpos.org/escpos/bt/print?srcTp=uri&srcObj=html&src='data:text/html,";
+            dynHtml += document.body.innerHTML
+            dynHtml += "'";
+            window.location.href = dynHtml;
+        }
+        function usbPrintBillInline() {
+            let dynHtml = "print://escpos.org/escpos/usb/print?srcTp=uri&srcObj=html&src='data:text/html,";
+            dynHtml += document.body.innerHTML
+            dynHtml += "'";
+            window.location.href = dynHtml;
+        }
+        function netPrintBillUrl() {
+            let dynHtml = "print://escpos.org/escpos/net/print?srcTp=uri&srcObj=html&src='";
+            dynHtml += encodeURIComponent("https://loopedlabs.com/web-print/bill.html");
+            dynHtml += "'";
+            window.location.href = dynHtml;
+        }
+        function btPrintBillUrl() {
+            let dynHtml = "print://escpos.org/escpos/bt/print?srcTp=uri&srcObj=html&src='";
+            dynHtml += encodeURIComponent("https://loopedlabs.com/web-print/bill.html");
+            dynHtml += "'";
+            window.location.href = dynHtml;
+        }
+        function usbPrintBillUrl() {
+            let dynHtml = "print://escpos.org/escpos/usb/print?srcTp=uri&srcObj=html&src='";
+            dynHtml += encodeURIComponent("https://loopedlabs.com/web-print/bill.html");
+            dynHtml += "'";
+            window.location.href = dynHtml;
+        }
+        function netPrintImgUrl() {
+            let dynHtml = "print://escpos.org/escpos/net/print?srcTp=uri&srcObj=png&src='";
+            dynHtml += encodeURIComponent("https://loopedlabs.com/web-print/einstein.png");
+            dynHtml += "'";
+            window.location.href = dynHtml;
+        }
+        function btPrintImgUrl() {
+            let dynHtml = "print://escpos.org/escpos/bt/print?srcTp=uri&srcObj=png&src='";
+            dynHtml += encodeURIComponent("https://loopedlabs.com/web-print/einstein.png");
+            dynHtml += "'";
+            window.location.href = dynHtml;
+        }
+        function usbPrintImgUrl() {
+            let dynHtml = "print://escpos.org/escpos/usb/print?srcTp=uri&srcObj=png&src='";
+            dynHtml += encodeURIComponent("https://loopedlabs.com/web-print/einstein.png");
+            dynHtml += "'";
+            window.location.href = dynHtml;
+        }
+        function netPrintPdfUrl() {
+            let dynHtml = "print://escpos.org/escpos/net/print?srcTp=uri&srcObj=pdf&src='";
+            dynHtml += encodeURIComponent("https://loopedlabs.com/web-print/sample.pdf");
+            dynHtml += "'";
+            window.location.href = dynHtml;
+        }
+        function btPrintPdfUrl() {
+            let dynHtml = "print://escpos.org/escpos/bt/print?srcTp=uri&srcObj=pdf&src='";
+            dynHtml += encodeURIComponent("https://loopedlabs.com/web-print/sample.pdf");
+            dynHtml += "'";
+            window.location.href = dynHtml;
+        }
+        function usbPrintPdfUrl() {
+            let dynHtml = "print://escpos.org/escpos/usb/print?srcTp=uri&srcObj=pdf&src='";
+            dynHtml += encodeURIComponent("https://loopedlabs.com/web-print/sample.pdf");
+            dynHtml += "'";
+            window.location.href = dynHtml;
+        }
+    </script>
+
+
+
+</body></html>
