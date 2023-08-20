@@ -28,6 +28,7 @@ This HTML code provides a user-friendly interface for generating bills and print
 3. Customize the bill details, items, and amounts as needed.
 4. Use the provided buttons to initiate printing based on your preferred method.
 5. Download and install the android application and run in background.
+6. APP LINK https://play.google.com/store/apps/details?id=com.loopedlabs.escposprintservice&hl=en&gl=US&pli=1
 
 Please note that for certain printing methods (Bluetooth, USB, network), the code relies on specific URLs and data formats for successful printing. Ensure that the URLs provided in the script are correct and accessible.
 
